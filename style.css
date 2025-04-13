@@ -1,6 +1,11 @@
 /*   DEFAULT HTML CLASSES   */
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto.ttf");
+}
+
 html {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Roboto";
     color: #AAAAAA;
     overflow-wrap: anywhere;
     
@@ -14,7 +19,7 @@ html {
 
 header {
     margin-top: 6vh;
-    font-size: 48pt;
+    font-size: 6vh;
     height: fit-content;
 }
 
