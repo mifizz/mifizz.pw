@@ -41,4 +41,4 @@ def json_kitis_api():
 if __name__ == "__main__":
     # logger.init_logger("log.log", True)
     kapi.init_api()
-    app.run(port=8000, debug=True)
+    app.run()
