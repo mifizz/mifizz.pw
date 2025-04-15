@@ -1,0 +1,18 @@
+{
+    "colors": {
+        "ok":           "42.30",
+        "info":         "47.30",
+        "fail":         "41",
+        "warn":         "43.30",
+        "trash":        "90"
+    },
+    "links": {
+        "base":         "http://94.72.18.202:8083/",
+        "index":        "http://94.72.18.202:8083/index.htm",
+        "s_group":      "http://94.72.18.202:8083/cg.htm",
+        "s_lecturer":   "http://94.72.18.202:8083/cp.htm",
+        "s_room":       "http://94.72.18.202:8083/ca.htm",
+        "r_group":      "http://94.72.18.202:8083/vg.htm",
+        "r_lecturer":   "http://94.72.18.202:8083/vp.htm"
+    }
+}
