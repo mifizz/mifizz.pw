@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 import kitis_api as kapi
-import logger
-from logger import log
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
@@ -9,8 +7,10 @@ app = Flask(__name__, static_folder="static", template_folder="templates")
 def p_index():
     return render_template("index.html")
 
-@app.route("/<page>")
+@app.route("/<page>/", strict_slashes=False)
+@app.route("/<page>", strict_slashes=False)
 def serve_page(page):
+    page = page.lower()
     try:
         return render_template(f"{page}.html")
     except:
@@ -39,6 +39,5 @@ def json_kitis_api():
     return jsonify(r)
 
 if __name__ == "__main__":
-    # logger.init_logger("log.log", True)
     kapi.init_api()
     app.run()
