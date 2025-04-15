@@ -2,13 +2,14 @@ from flask import Flask, render_template, request, jsonify
 import kitis_api as kapi
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
+kapi.init_api()
 
 @app.route("/")
 def p_index():
     return render_template("index.html")
 
-@app.route("/<page>/", strict_slashes=False)
-@app.route("/<page>", strict_slashes=False)
+@app.route("/<page>/")
+@app.route("/<page>")
 def serve_page(page):
     page = page.lower()
     try:
@@ -16,6 +17,7 @@ def serve_page(page):
     except:
         return render_template("404.html")
 
+@app.route("/kitis/api/", methods=["POST"])
 @app.route("/kitis/api", methods=["POST"])
 def json_kitis_api():
     post_data = request.get_json()
@@ -39,5 +41,4 @@ def json_kitis_api():
     return jsonify(r)
 
 if __name__ == "__main__":
-    kapi.init_api()
     app.run()
