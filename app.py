@@ -12,10 +12,12 @@ def p_index():
 @app.route("/<page>")
 def serve_page(page):
     page = page.lower()
+    if page == "404":
+        return render_template("404.html"), 404
     try:
-        return render_template(f"{page}.html")
+        return render_template(f"{page}.html"), 200
     except:
-        return render_template("404.html")
+        return render_template("404.html"), 404
 
 @app.route("/kitis/api/", methods=["POST"])
 @app.route("/kitis/api", methods=["POST"])
