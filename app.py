@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, json, Response
 import kitis_api as kapi
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
@@ -39,8 +39,8 @@ def json_kitis_api():
                 return f"KeyError: {e} - Invalid source!", 400
         else:
             return f"Error: {e}", 400
-    
-    return jsonify(r)
+    json_r = json.dumps(r, ensure_ascii=False)
+    return Response(json_r, content_type="application/json; charset=utf-8")
 
 if __name__ == "__main__":
     app.run()
