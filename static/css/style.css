@@ -6,21 +6,15 @@
 
 html {
     font-family: "Roboto";
-    color: #AAAAAA;
-    overflow-wrap: anywhere;
-    
-    margin: 0 6vw;
-
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 1) 0%,
-        rgba(25, 25, 52, 1) 80%
-    );
-
     font-size: 16px;
+    color: #ffffff;
+    overflow-wrap: anywhere;
+    margin: 0 6vw;
+    background-color: black;
 }
 
 header {
-    margin-top: 6vh;
+    margin-top: 2vh;
     font-size: clamp(2rem, 5vw, 3rem);
     height: fit-content;
 }
@@ -49,25 +43,28 @@ h1 {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 
-p, ul, ol, li {
+p,
+ul,
+ol,
+li {
     font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
 /*   LINKS   */
 a {
-    color: #69FF8F;
+    color: #69ff8f;
     text-decoration: solid;
 }
 a:hover {
-    color: #69FF8F;
+    color: #69ff8f;
     text-decoration: underline;
 }
 a:visited {
-    color: #69FF8F;
+    color: #69ff8f;
     text-decoration: solid;
 }
 a:active {
-    color: #A8FFDB;
+    color: #a8ffdb;
     text-decoration: underline;
 }
 
@@ -78,15 +75,10 @@ a:active {
     border-radius: 10pt;
     border-color: #525252;
 }
-
-.contacts {
-    background-color: rgba(52, 52, 52, 0.5);
-    border: none;
-    border-radius: 10px;
-    padding: 1vh 1vw;
-    padding-right: 4vw;
-    max-width: fit-content;
-    margin: 8vh 0;
+.img-head {
+    margin-top: 0;
+    width: 100%;
+    height: 20vh;
 }
 
 /*   RULES FOR DIFFERENT RESOLUTIONS   */

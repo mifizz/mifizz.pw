@@ -1,2 +1,6 @@
+venv
 __pycache__
+static/videos
+static/images
+links.json
 log.log

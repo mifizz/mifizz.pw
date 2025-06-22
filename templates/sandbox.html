@@ -1,25 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-    <title id="header-text">Песочница</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+        <title id="header-text">Песочница</title>
+    </head>
+    <body>
+        <div id="header"></div>
 
-    <div id="header"></div>
+        <main>
+            <p>А тут мы построим завод трёх корочек :333</p>
+            <img
+                class="img-bordered"
+                src="{{ url_for('static', filename='images/under-construction.jpg') }}"
+                width="25%"
+                alt="Under construction.
+                Тут должна была быть картинка"
+            />
+        </main>
 
-    <main>
-        <p>
-            А тут мы построим завод трёх корочек :333
-        </p>
-    </main>
-    
-    <div id="footer"></div>
+        <div id="footer"></div>
 
-    <script src="{{ url_for('static', filename='js/header.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
-
-</body>
+        <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/footer.js') }}"></script>
+    </body>
 </html>
