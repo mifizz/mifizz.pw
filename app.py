@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, json, Response
+from flask import Flask, render_template, request, json, Response, send_from_directory
 import kitis_api as kapi
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
@@ -8,14 +8,18 @@ kapi.init_api()
 def p_index():
     return render_template("index.html")
 
-@app.route("/<page>/")
-@app.route("/<page>")
-def serve_page(page):
-    page = page.lower()
-    if page == "404":
-        return render_template("404.html"), 404
+@app.route("/kitis/testdump/<path:filename>")
+def serve_kitis_testdump(filename):
+    return send_from_directory("kitis/testdump", filename)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # Extract the path from the request
+    path = request.path.strip("/").lower()
     try:
-        return render_template(f"{page}.html"), 200
+        if path == "404":
+            return render_template("404.html"), 404
+        return render_template(f"{path}.html"), 200
     except:
         return render_template("404.html"), 404
 
@@ -43,4 +47,4 @@ def json_kitis_api():
     return Response(json_r, content_type="application/json; charset=utf-8")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
